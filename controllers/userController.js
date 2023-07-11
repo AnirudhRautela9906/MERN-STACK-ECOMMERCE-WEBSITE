@@ -69,6 +69,8 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
   if(!req.cookies.token){
     return next(new ErrorHandler("Cookie missing",401))
   }
+  res.set('Access-Control-Allow-Origin', req.headers.origin);
+  res.set('Access-Control-Allow-Credentials', 'true');
 res.set("Access-Control-Expose-Headers","set-cookie")
   res.cookie("token",req.cookies.token,{
     expires:new Date(Date.now()),
