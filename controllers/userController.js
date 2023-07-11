@@ -70,7 +70,7 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
     return next(new ErrorHandler("Cookie missing",401))
   }
   const options = {
-    expires:new Date(Date.now()),
+    expires:new Date(Date.now()  + 10 * 1000),
     httpOnly: true,
     secure:true,
 }
