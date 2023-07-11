@@ -84,7 +84,8 @@ export const userReducer = (state = { user: {} }, action) => {
             return{
                 loading:false,
                 isAuthenticated:false,
-                user:null
+                user:null,
+                isloggedOut:action.payload
             }
 
 

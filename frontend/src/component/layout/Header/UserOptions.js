@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState,useEffect } from "react";
 import "./Header.css";
 import { SpeedDialAction, SpeedDial } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ import { Backdrop } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const UserOptions = () => {
-  const { user } = useSelector((state) => state.user);
+  const { user,error,isloggedOut } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -58,23 +58,46 @@ const UserOptions = () => {
   }
   function logoutUser() {
     dispatch(logout());
-
     setTimeout(() => {
+      
       navigate("/login");
-
-      toast.success(`SEE U SOON ${user.name}`, {
-        position: window.innerWidth < 600 ? "top-center" : "bottom-center",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
     }, 500);
-  }
 
+  }
+  const errorAlert = (error, isCancelled) => {
+    toast.error(error, {
+      position: window.innerWidth < 600 ? "top-center" : "bottom-center",
+      autoClose: 1500,
+      hideProgressBar: isCancelled,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+  useEffect(() => {
+    let isCancelled = false;
+    if (error) {
+      errorAlert(error, isCancelled);
+      return () => {
+        isCancelled = true;
+      };
+    }
+    // if (isloggedOut ===true) {
+    //   toast.success(`SEE U SOON ${user.name}`, {
+    //     position: window.innerWidth < 600 ? "top-center" : "bottom-center",
+    //     autoClose: 5000,
+    //     hideProgressBar: isCancelled,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //     theme: "light",
+    //   });
+    //   navigate("/login");
+    // }
+},[navigate,error,isloggedOut,user.name])
   return (
     <Fragment>
       <Backdrop open={open} style={{ zIndex: 10 }} />

@@ -220,11 +220,10 @@ export const logout = ()=> async (dispatch) =>{
     try {
 
 
-        await axios.get(`/api/v1/logout`,{ mode: 'cors',
-        credentials: 'include'})
+        const {data} =   await axios.post(`/api/v1/logout`)
         
         dispatch({
-            type:LOGOUT_SUCCESS,
+            type:LOGOUT_SUCCESS,payload:data.success
         })
     } catch (error) {
         dispatch({
