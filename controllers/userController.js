@@ -69,17 +69,29 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
   if(!req.cookies.token){
     return next(new ErrorHandler("Cookie missing",401))
   }
-  res.cookie("token", "", { expires: new Date(0),domain:'mern-stack-ecommerce-website-one.vercel.app', path: '/' });
+  const options = {
+    expires:new Date(
+        Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true,
+    secure:true,
+    // sameSite:"none"
+}
+
+res.status(200).cookie('tokens',"token",options).json({
+    success:true,
+    message:"Logged Out"
+})
   // res.cookie("token",req.cookies.token,{
   //   expires:new Date(Date.now()),
   //   httpOnly:true,
   //   secure:true,
   //   path:"/"
   // })
-  res.status(200).json({
-    success:true,
-    message:"Logged Out"
-  })
+  // res.status(200).json({
+  //   success:true,
+  //   message:"Logged Out"
+  // })
  
 })
 
