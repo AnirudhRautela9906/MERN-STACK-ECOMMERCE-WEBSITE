@@ -75,7 +75,7 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
     httpOnly:true,
     secure:true,
     path:"/",
-    sameSite:"lax"
+    sameSite:"none"
   })
   res.status(200).json({
     success:true,
