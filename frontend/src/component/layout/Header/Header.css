@@ -1,0 +1,46 @@
+.speedDial{
+    position: fixed;
+    top: 3vmax;
+    z-index: 11;  /* Not Effective, set it by following order of preferences */
+    right: 5vmax;
+}
+.speedDialIcon{
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.nav1{
+    background-image: linear-gradient(136deg, rgb(242, 113, 33) 23%, rgb(233, 64, 87) 106%);
+}
+.nav2{
+    background-image: linear-gradient(136deg, rgb(242, 113, 33) -14%, rgb(233, 64, 87) 77%, rgb(138, 35, 135) 171%);
+}
+.nav3{
+    background-image: linear-gradient(136deg, rgb(242, 113, 33) -51%, rgb(233, 64, 87) 46%, rgb(138, 35, 135) 131%);
+}
+.nav4{
+    background-image: linear-gradient(136deg, rgb(233, 64, 87) 13%, rgb(138, 35, 135) 100%);
+}
+@media screen and (max-width:800px) {
+    .nav1 {
+        width: 40%;
+        background-image: linear-gradient(136deg, rgb(242, 113, 33) 0%, rgb(233, 64, 87) 76%, rgb(138, 35, 135) 114%);
+    }    
+    .nav2 {
+        left: 32%;
+        background-image: linear-gradient(136deg, rgb(242, 113, 33) -15%, rgb(233, 64, 87) 68%, rgb(138, 35, 135) 107%);
+    }  
+    .nav3 {
+        left: 54%;
+        background-image: linear-gradient(136deg, rgb(242, 113, 33) -30%, rgb(233, 64, 87) 57%, rgb(138, 35, 135) 99%);
+    }  
+    .nav4 {
+        background-image: linear-gradient(136deg, rgb(242, 113, 33) -42%,rgb(233, 64, 87) 46%, rgb(138, 35, 135) 91%);
+    }
+    .logoReactNavbar {
+        width: 130%!important;
+        transform: translateX(10px);
+    }
+}

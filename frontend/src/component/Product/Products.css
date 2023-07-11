@@ -1,0 +1,114 @@
+.productsHeading{
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.5vmax;
+    border-bottom: 1px solid rgba(21,21,21,.5);
+    width: 20vmax;
+    padding: 2vmax;
+    margin: 2vmax auto;
+    color: rgba(0,0,0,.7);
+}
+.products{
+    flex-wrap: wrap;
+    padding: 0 10vmax;
+    min-height: 131vh;
+    align-items: flex-start;
+}
+
+.paginationBox {
+    display: flex;
+    justify-content: center;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+.page-item{
+    background-color: rgb(255,255,255);
+    list-style: none;
+    border: 1px solid rgba(0,0,0,.178);
+    transition: all .5s;
+    /* cursor: pointer; */
+    padding: 1vmax 0vmax;
+    margin: 0 0.5vmax
+}
+
+.page-link {
+    padding: 1vmax 1.5vmax;
+    font: 300 .7vmax "Roboto";
+    color: rgb(80, 80, 80);
+    transition: all .5s;
+}
+.page-item:hover{
+    background-color: rgb(230, 230, 230);
+}
+.pageLinkActive{
+    color: white;
+}
+.pageLinkActive:hover{
+    color: rgb(80, 80, 80);
+
+}
+.pageItemActive{
+    background-color: tomato;
+}
+.filterBox{
+    width: 10vmax;
+    position: absolute;
+    top: 10vmax;
+    left: 4vmax;
+    z-index: 9;
+}
+.mobile{
+    display: none;
+}
+.desktop{
+    display: block;
+}
+.categoryBox{
+    padding: 0%;
+}
+.categoryLink{
+    list-style: none;
+    color: rgba(0,0,0,.78);
+    font: 400 .8vmax "Roboto";
+    margin: .4vmax;
+    cursor: pointer;
+    transition: all .5s
+}
+.categoryLink:hover{
+    color: tomato;
+}
+.filterBox > fieldset {
+    border: 1px solid rgba(0,0,0,.378);
+}
+
+
+@media screen and (max-width: 600px){
+    .products{
+        padding: 0 5vmax;
+    min-height: 101vh;
+    }
+    .mobile{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+    .filterBox{
+        width: 20vmax;
+        position: static;
+        margin: auto;
+    }
+    .page-link{
+        font: 300 1.7vmax "Roboto";
+    }
+    .categoryLink{
+        font: 400 1.8vmax "Roboto";
+    }
+.pagination{
+margin: 5vmax;
+}
+}
