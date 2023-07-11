@@ -69,25 +69,16 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
   if(!req.cookies.token){
     return next(new ErrorHandler("Cookie missing",401))
   }
-  const options = {
-    expires:new Date(Date.now()  + 10 * 1000),
-    httpOnly: true,
+  res.cookie("token",req.cookies.token,{
+    expires:new Date(Date.now()),
+    httpOnly:true,
     secure:true,
-}
-res.status(200).cookie('token',null,options).json({
-  success:true,
-  message:"Logged Out"
-})
-  // res.cookie("token",null,{
-  //   expires:new Date(Date.now()),
-  //   httpOnly:true,
-  //   secure:true,
-  // })
-  // res.status(200).json({
-  //   success:true,
-  //   message:"Logged Out"
-  // })
-
+    path:"/"
+  })
+  res.status(200).json({
+    success:true,
+    message:"Logged Out"
+  })
 })
 
 // Forgot Password
