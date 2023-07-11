@@ -69,7 +69,7 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
   if(!req.cookies.token){
     return next(new ErrorHandler("Cookie missing",401))
   }
-  res.clearCookie("token")
+  res.cookie("token", "", { expires: new Date(0),domain:'mern-stack-ecommerce-website-one.vercel.app', path: '/' });
   // res.cookie("token",req.cookies.token,{
   //   expires:new Date(Date.now()),
   //   httpOnly:true,
@@ -80,7 +80,7 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
     success:true,
     message:"Logged Out"
   })
-  res.end()
+ 
 })
 
 // Forgot Password
