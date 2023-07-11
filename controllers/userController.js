@@ -69,7 +69,14 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
   if(!req.cookies.token){
     return next(new ErrorHandler("Cookie missing",401))
   }
- 
+//   const options = {
+//     expires:new Date(Date.now()),
+//     httpOnly: true,
+//     secure:true,
+//     sameSite:"strict"
+// }
+  //  await Cookies.remove("token", options);
+  
   res.cookie("token",req.cookies.token,{
     expires:new Date(Date.now()),
     httpOnly:true,
