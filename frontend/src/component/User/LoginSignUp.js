@@ -20,7 +20,7 @@ const LoginSignUp = () => {
     const [registerPassInputType,registerIconToggle] = passToText()
     const [loginPassInputType,loginIconToggle] = passToText()
 
-    const {error,loading,isAuthenticated,Name} = useSelector((state) => state.user)
+    const {error,loading,isAuthenticated,Name,isloggedOut} = useSelector((state) => state.user)
     const dispatch = useDispatch()
    const navigate = useNavigate()
 
@@ -127,7 +127,7 @@ const LoginSignUp = () => {
         }
     
     else 
-    if(isAuthenticated){
+    if(isAuthenticated === true){
         if(location.search){
             navigate(`/${location.search.split("=")[1]}`)
         }
@@ -146,12 +146,27 @@ const LoginSignUp = () => {
             theme: "light",
             });;
       }
+      if (isloggedOut === true) {
+        toast.success(`SEE U SOON`, {
+          position: window.innerWidth < 600 ? "top-center" : "bottom-center",
+          autoClose: 1500,
+          hideProgressBar: isCancelled,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+       
+      }
+
+
       else  {
         errorAlert(error,isCancelled)
        return ()=>{isCancelled = true}
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch,error,isAuthenticated,navigate])
+    }, [dispatch,error,isAuthenticated,navigate,isloggedOut])
     
 
   return (

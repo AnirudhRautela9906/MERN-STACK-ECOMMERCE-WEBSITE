@@ -149,7 +149,7 @@ const ProductDetails = () => {
         !error && (
           <Fragment>
             <MetaData title={`ECOMMERECE-${product.name}`} />
-            <div className="productDetails">
+            <div  className="productDetails">
               <div>
                 <div className="CarouselBox">
                   <Carousel navButtonsAlwaysVisible={true}>

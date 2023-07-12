@@ -13,7 +13,7 @@ import { Backdrop } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const UserOptions = () => {
-  const { user,error,isloggedOut } = useSelector((state) => state.user);
+  const { user,error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -58,12 +58,8 @@ const UserOptions = () => {
   }
   function logoutUser() {
     dispatch(logout());
-    setTimeout(() => {
-      
-      navigate("/login");
-    }, 500);
-
   }
+
   const errorAlert = (error, isCancelled) => {
     toast.error(error, {
       position: window.innerWidth < 600 ? "top-center" : "bottom-center",
@@ -84,20 +80,7 @@ const UserOptions = () => {
         isCancelled = true;
       };
     }
-    // if (isloggedOut ===true) {
-    //   toast.success(`SEE U SOON ${user.name}`, {
-    //     position: window.innerWidth < 600 ? "top-center" : "bottom-center",
-    //     autoClose: 5000,
-    //     hideProgressBar: isCancelled,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    //     theme: "light",
-    //   });
-    //   navigate("/login");
-    // }
-},[navigate,error,isloggedOut,user.name])
+},[navigate,error])
   return (
     <Fragment>
       <Backdrop open={open} style={{ zIndex: 10 }} />

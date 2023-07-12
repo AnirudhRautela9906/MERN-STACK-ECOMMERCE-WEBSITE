@@ -23,6 +23,12 @@
 .nav4{
     background-image: linear-gradient(136deg, rgb(233, 64, 87) 13%, rgb(138, 35, 135) 100%);
 }
+.linksReactNavbar:hover{
+    color: #ffa2a2 !important;
+}
+.nav4 svg:hover{
+    color: #ffa2a2  !important;
+}
 @media screen and (max-width:800px) {
     .nav1 {
         width: 40%;
@@ -42,5 +48,15 @@
     .logoReactNavbar {
         width: 130%!important;
         transform: translateX(10px);
+    }
+    
+
+    @keyframes LogoleftIn {
+        0%{
+            transform: translateX(-100vw);
+        }
+        100%{
+            transform: translateX(10px);
+        }
     }
 }

@@ -49,7 +49,7 @@ exports.loginUser = catchAsyncErrors(async (req,res,next)=>{
     const user =await User.findOne({email}).select("+password")
 
     if(!user){
-        return next(new ErrorHandler("Invalid Email or Password",401))
+        return next(new ErrorHandler("Email Id does not exist",401))
     }
 
     const isPasswordMatched = await user.comparePassword(password)
@@ -66,9 +66,7 @@ exports.loginUser = catchAsyncErrors(async (req,res,next)=>{
 // Logout User
 
 exports.logout = catchAsyncErrors(async(req,res,next)=>{
-  if(!req.cookies.token){
-    return next(new ErrorHandler("Cookie missing",401))
-  }
+ 
   res.cookie("token",null,{
     expires:new Date(Date.now()),
     httpOnly:true,

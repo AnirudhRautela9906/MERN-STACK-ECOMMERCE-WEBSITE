@@ -73,7 +73,7 @@ function App() {
         <Route path="/contact" Component={Contact} />
         <Route path="/about" Component={About} />
 
-        {isAuthenticated && (
+        (
           <Route element={<ProtectedRoute />}>
             <Route path="/account" Component={Profile} />
             <Route path="/profile_update" Component={UpdateProfile} />
@@ -96,7 +96,7 @@ function App() {
               <Route path="/admin/reviews" Component={ProductReviews} />
             </Route>
           </Route>
-        )}
+        )
       </Routes>
       <Footer />
       {/* <Route

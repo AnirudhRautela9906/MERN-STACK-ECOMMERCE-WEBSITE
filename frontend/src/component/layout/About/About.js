@@ -17,7 +17,7 @@ const About = () => {
           <div>
             <Avatar
               style={{ width: window.innerWidth < 600 ? "20vmax" : "10vmax", height: window.innerWidth < 600 ? "20vmax" :"10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/dkkegunsq/image/upload/v1688922756/avatars/wnvvg61eqjppnf8zjtqt.jpg"
+              src="https://res.cloudinary.com/dkkegunsq/image/upload/v1689145851/Admin%20Photo/wnvvg61eqjppnf8zjtqt_c6k0m8.jpg"
               alt="Owner"
             />
             <Typography>Anirudh Rautela</Typography>
