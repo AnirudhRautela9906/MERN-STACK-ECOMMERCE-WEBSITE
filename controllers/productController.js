@@ -48,8 +48,8 @@ exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
   const productsCount = await Product.countDocuments();
 
   const apiFeature = new ApiFeatures(Product.find().sort({"time":-1}), req.query)
-    .search()
-    .filter();
+    // .search()
+    // .filter();
 
   let products = await apiFeature.query;
   let filteredProductsCount = products.length;

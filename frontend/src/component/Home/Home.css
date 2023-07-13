@@ -72,6 +72,7 @@
     padding-bottom: .5vmax;
     transition: all .5s;
     height: fit-content;
+    margin: 1vmax;
 
 }
 .productCard > img {
@@ -97,8 +98,10 @@
     margin-bottom: 0;
     font-weight: 800;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 .productCard >div > span {
     margin: .5vmax;

@@ -13,15 +13,17 @@ const Search = () => {
     const searchSubmitHandler = (e) =>{
         e.preventDefault();
         keyword = keyword.trim()
-        if(keyword){
-            navigate(`/products/${keyword}`)
-        }
-        else{
-            navigate(`/products`
-            // ,{replace:true}
-            )
-
-        }
+        localStorage.setItem("keyword",keyword)
+            navigate(`/products`)
+        
+        // if(keyword){
+        //     navigate(`/products/${keyword}`)
+        // }
+        // else{
+        //     navigate(`/products`
+        //     // ,{replace:true}
+        //     )
+        // }
     }
     
   return (

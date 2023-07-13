@@ -73,7 +73,7 @@
 .categoryLink{
     list-style: none;
     color: rgba(0,0,0,.78);
-    font: 400 .8vmax "Roboto";
+    font: 400 1.2vmax "Roboto";
     margin: .4vmax;
     cursor: pointer;
     transition: all .5s

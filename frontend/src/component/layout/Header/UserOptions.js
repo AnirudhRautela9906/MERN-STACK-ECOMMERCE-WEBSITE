@@ -58,6 +58,9 @@ const UserOptions = () => {
   }
   function logoutUser() {
     dispatch(logout());
+    setTimeout(() => {
+      navigate("/login")
+    }, 1000);
   }
 
   const errorAlert = (error, isCancelled) => {
