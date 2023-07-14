@@ -29,6 +29,9 @@
 .nav4 svg:hover{
     color: #ffa2a2  !important;
 }
+.logoReactNavbar{
+    cursor: inherit !important;
+}
 @media screen and (max-width:800px) {
     .nav1 {
         width: 40%;

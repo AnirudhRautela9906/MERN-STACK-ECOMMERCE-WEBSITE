@@ -14,7 +14,7 @@
 .CarouselBox {
     width: 50%;
     position: absolute;
-    top: 20vh;
+    /* top: 20vh; */
 }
 .productDetails > div {
     width: 100%;
@@ -119,6 +119,8 @@
     color: rgba(0, 0, 0, .534);
     font: 300 1.1vmax sans-serif;
     margin-top: .5vmax;
+    text-align: justify;
+
 }
 .price{
         margin: .5vmax;
@@ -223,8 +225,12 @@ padding: 3vmax;
         top: 0;
         height: inherit;
     }
-    .css-ohwg9z {
+    .CarouselBox .css-ohwg9z {
         height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
     .detailsBlock-1 > h2 {
         font-size: 2.8vmax;
@@ -269,9 +275,14 @@ padding: 3vmax;
         width: 20vmax;
         margin: 3vmax 0;
     }
-    .productDetails :where(.detailsBlock-3,.detailsBlock-4) > p {
+    .productDetails .detailsBlock-3 > p {
         padding: 2.5vmax 0;
         text-align: center;
+        font: 400 2vmax "Roboto";
+    }
+    .productDetails .detailsBlock-4 > p {
+        padding: 2.5vmax 0;
+        text-align: justify;
         font: 400 2vmax "Roboto";
     }
     .detailsBlock-4 {
@@ -290,5 +301,5 @@ padding: 3vmax;
     .reviewCard > p , .reviewCard > span {
         font-size: 1.8vmax;
     }
-
+  
 }
