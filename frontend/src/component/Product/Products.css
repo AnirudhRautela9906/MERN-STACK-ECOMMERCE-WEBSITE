@@ -9,11 +9,12 @@
     margin: 2vmax auto;
     color: rgba(0,0,0,.7);
 }
-.products{
+.products {
     flex-wrap: wrap;
-    padding: 0 10vmax;
-    min-height: 131vh;
+    padding: 0 auto 0 15vmax;
     align-items: flex-start;
+    padding-left: 15vmax;
+    width: 80vw;
 }
 
 .paginationBox {

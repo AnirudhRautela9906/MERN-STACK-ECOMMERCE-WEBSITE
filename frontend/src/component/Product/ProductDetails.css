@@ -1,17 +1,20 @@
-.productDetails{
-background-color: rgb(246 246 246);
-width: 100vw;
-max-width: 100%;
-padding: 6vmax;
-box-sizing: border-box;
-display: flex;
+.productDetails {
+    background-color: rgb(246 246 246);
+    width: 100vw;
+    max-width: 100%;
+    padding: 6vmax;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .CarouselImage{
     width: 100%;
     height: 100%;
 }
-.CarouselBox{
-    width:  60%;
+.CarouselBox {
+    width: 50%;
+    position: absolute;
+    top: 20vh;
 }
 .productDetails > div {
     width: 100%;
@@ -25,6 +28,7 @@ display: flex;
 }
 .productDetails > div:first-child{
     align-items: center;
+    position: relative;
 }
 .detailsBlock-1 > h2 {
     color: rgb(54, 54, 54);
@@ -204,13 +208,23 @@ padding: 3vmax;
         flex-direction: column;
         height: unset;
         padding: 2vmax;
-        padding-top: 10vmax;
+        padding-top: 13vmax;
+        display: flex;
     }
     .productDetails > div:last-child{
         align-items: center;
     }
+    .productDetails > div:first-child {
+        height: 50vh;
+    }
     .CarouselBox{
-        width:  100%;
+        width:  90%;
+        position: relative;
+        top: 0;
+        height: inherit;
+    }
+    .css-ohwg9z {
+        height: inherit;
     }
     .detailsBlock-1 > h2 {
         font-size: 2.8vmax;

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.4fe5e9c2.css",
+    "main.css": "/static/css/main.837d2029.css",
     "main.js": "/static/js/main.15ea810c.js",
     "static/media/App-Store.png": "/static/media/App-Store.8dc2ee327561e3d19b99.png",
     "static/media/Google-Play.png": "/static/media/Google-Play.fb5854180cb3104fe2a7.png",
     "index.html": "/index.html",
-    "main.4fe5e9c2.css.map": "/static/css/main.4fe5e9c2.css.map",
+    "main.837d2029.css.map": "/static/css/main.837d2029.css.map",
     "main.15ea810c.js.map": "/static/js/main.15ea810c.js.map"
   },
   "entrypoints": [
-    "static/css/main.4fe5e9c2.css",
+    "static/css/main.837d2029.css",
     "static/js/main.15ea810c.js"
   ]
 }

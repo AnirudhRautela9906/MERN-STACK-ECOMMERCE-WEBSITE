@@ -52,7 +52,7 @@
 .container {
     margin: 2vmax auto;
     flex-wrap: wrap;
-    width: 70vw;
+    width: 80vw;
     max-width: 100%;
 }
 .content{
@@ -130,5 +130,10 @@
     .productCard > div > span {
         font-size: 2vmax;
     }
-    
+    .container {
+        margin: 2vmax auto;
+        flex-wrap: wrap;
+        width: 90vw;
+        max-width: 100%;
+    }
 }
