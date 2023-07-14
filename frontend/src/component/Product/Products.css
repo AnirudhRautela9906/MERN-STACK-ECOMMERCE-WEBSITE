@@ -14,7 +14,8 @@
     align-items: flex-start;
     padding-left: 15vmax;
     width: 80vw;
-    min-height: 100vh;
+    min-height: 99vh;
+
 }
 
 .paginationBox {
